@@ -27,15 +27,40 @@ class _MainScreenState extends State<MainScreen> {
           return MaterialApp(
             home: Scaffold(
               appBar: AppBar(
+                backgroundColor: Colors.black54,
                 title: const Text('sNews'),
                 centerTitle: true,
               ),
               body: ListView.builder(
                   itemCount: state.loaded.response!.docs!.length,
                   itemBuilder: (context, index) {
-                    return Card(
-                      child: Image.network(
-                          'https://www.nytimes.com/${state.loaded.response!.docs![index].multimedia![index].url}'),
+                    // if (index == 3) {
+                    //   return const Text('3');
+                    // }
+                    return Padding(
+                      padding: const EdgeInsets.fromLTRB(2, 16, 2, 0),
+                      child: Container(
+                        color: Colors.black54,
+                        child: Wrap(
+                          direction: Axis.horizontal,
+                          children: [
+                            SizedBox(
+                              height: 150,
+                              width: MediaQuery.of(context).size.width / 2,
+                              child: state.loaded.response?.docs?[index] != null
+                                  ? Image.network(
+                                      'https://www.nytimes.com/${state.loaded.response!.docs![index].multimedia![index].url}',
+                                    )
+                                  : const Icon(Icons.close),
+                            ),
+                            Text(
+                              state.loaded.response!.docs![index].abstract
+                                  .toString(),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
                     );
                   }),
             ),
