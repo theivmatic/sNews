@@ -1,4 +1,4 @@
-import 'package:snews/src/feature/domain/models/all_news/all_news_entity/all_news_entity.dart';
+import 'package:snews/src/feature/domain/models/all_news/all_news_entity.dart';
 
 abstract class IDataApi {
   Future<AllNewsEntity> fetchAllNews();

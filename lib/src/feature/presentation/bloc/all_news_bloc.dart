@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/data/data_api_impl.dart';
-import 'package:snews/src/feature/domain/models/all_news/all_news_entity/all_news_entity.dart';
+import 'package:snews/src/feature/domain/models/all_news/all_news_entity.dart';
 
 part 'all_news_event.dart';
 part 'all_news_state.dart';

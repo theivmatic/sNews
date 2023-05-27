@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:snews/src/feature/domain/interfaces/data_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:snews/src/feature/domain/models/all_news/all_news_entity/all_news_entity.dart';
+import 'package:snews/src/feature/domain/models/all_news/all_news_entity.dart';
 
 class ApiDataImpl implements IDataApi {
   final http.Client? _client;
