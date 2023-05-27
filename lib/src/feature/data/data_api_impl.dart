@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:snews/src/feature/domain/interfaces/data_api.dart';
-import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
 import 'package:http/http.dart' as http;
+import 'package:snews/src/feature/domain/models/all_news/all_news_entity/all_news_entity.dart';
 
 class ApiDataImpl implements IDataApi {
   final http.Client? _client;
@@ -12,7 +12,7 @@ class ApiDataImpl implements IDataApi {
   Future<AllNewsEntity> fetchAllNews() async {
     final response = await _client!.get(
       Uri.parse(
-          'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=7G6FwHXsXDGLikbSgrCwcOHABUWIeTrc'),
+          'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=7G6FwHXsXDGLikbSgrCwcOHABUWIeTrc'),
       headers: {
         'Content-Type': 'application/json',
       },
