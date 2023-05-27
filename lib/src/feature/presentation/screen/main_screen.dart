@@ -30,6 +30,14 @@ class _MainScreenState extends State<MainScreen> {
                 title: const Text('sNews'),
                 centerTitle: true,
               ),
+              body: ListView.builder(
+                  itemCount: state.loaded.response!.docs!.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: Image.network(
+                          'https://www.nytimes.com/${state.loaded.response!.docs![index].multimedia![index].url}'),
+                    );
+                  }),
             ),
           );
         }
