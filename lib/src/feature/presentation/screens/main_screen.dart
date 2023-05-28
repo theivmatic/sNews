@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
 
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -25,11 +26,30 @@ class _MainScreenState extends State<MainScreen> {
       builder: (context, state) {
         if (state is AllNewsLoadedState) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Scaffold(
               appBar: AppBar(
-                backgroundColor: Colors.black54,
-                title: const Text('sNews'),
+                backgroundColor: Colors.white,
+                title: const Text(
+                  'sNews',
+                  style: TextStyle(color: Colors.black, fontSize: 30),
+                ),
                 centerTitle: true,
+                leading: const Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                  size: 25,
+                ),
+                actions: const [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Icon(
+                      Icons.account_circle,
+                      color: Colors.black,
+                      size: 35,
+                    ),
+                  )
+                ],
               ),
               body: ListView.builder(
                   itemCount: state.loaded.results!.length,

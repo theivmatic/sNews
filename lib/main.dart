@@ -19,6 +19,7 @@ class MainApp extends StatelessWidget {
       ],
       builder: (context, child) => Builder(builder: (context) {
         return const MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: MainScreen(),
         );
       }),
