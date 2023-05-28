@@ -41,6 +41,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
   @override
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
+      slidePercent: 30,
       isTitleCentered: true,
       backgroundColorMenu: Colors.white,
       backgroundColorAppBar: Colors.white,
