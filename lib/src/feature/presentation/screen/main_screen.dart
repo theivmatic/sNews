@@ -38,25 +38,35 @@ class _MainScreenState extends State<MainScreen> {
                     //   return const Text('3');
                     // }
                     return Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 16, 2, 0),
+                      padding: const EdgeInsets.fromLTRB(10, 16, 10, 0),
                       child: Container(
-                        color: Colors.black54,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(137, 240, 182, 182),
+                          // border: Border.all(),
+                          borderRadius: BorderRadius.all(Radius.circular(5),)
+                        ),
                         child: Wrap(
                           direction: Axis.horizontal,
                           children: [
                             SizedBox(
                               height: 150,
-                              width: MediaQuery.of(context).size.width / 2,
+                              width: MediaQuery.of(context).size.width / 2.2,
                               child: state.loaded.response?.docs?[index] != null
                                   ? Image.network(
                                       'https://www.nytimes.com/${state.loaded.response!.docs![index].multimedia![index].url}',
                                     )
                                   : const Icon(Icons.close),
                             ),
-                            Text(
-                              state.loaded.response!.docs![index].abstract
-                                  .toString(),
-                              overflow: TextOverflow.ellipsis,
+                            SizedBox(
+                              width: 194,
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                                child: Text(
+                                  state.loaded.response!.docs![index].abstract
+                                      .toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
                             ),
                           ],
                         ),
