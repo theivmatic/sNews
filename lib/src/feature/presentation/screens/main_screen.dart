@@ -31,48 +31,44 @@ class _MainScreenState extends State<MainScreen> {
                 title: const Text('sNews'),
                 centerTitle: true,
               ),
-              // body: ListView.builder(
-              //     itemCount: state.loaded.response!.docs!.length,
-              //     itemBuilder: (context, index) {
-              //       // if (index == 3) {
-              //       //   return const Text('3');
-              //       // }
-              //       return Padding(
-              //         padding: const EdgeInsets.fromLTRB(10, 16, 10, 0),
-              //         child: Container(
-              //           decoration: const BoxDecoration(
-              //             color: Color.fromARGB(137, 240, 182, 182),
-              //             // border: Border.all(),
-              //             borderRadius: BorderRadius.all(Radius.circular(5),)
-              //           ),
-              //           child: Wrap(
-              //             direction: Axis.horizontal,
-              //             children: [
-              //               SizedBox(
-              //                 height: 150,
-              //                 width: MediaQuery.of(context).size.width / 2.2,
-              //                 child: state.loaded.response?.docs?[index] != null
-              //                     ? Image.network(
-              //                         'https://www.nytimes.com/${state.loaded.response!.docs![index].multimedia![index].url}',
-              //                       )
-              //                     : const Icon(Icons.close),
-              //               ),
-              //               SizedBox(
-              //                 width: 194,
-              //                 child: Padding(
-              //                   padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-              //                   child: Text(
-              //                     state.loaded.response!.docs![index].abstract
-              //                         .toString(),
-              //                     overflow: TextOverflow.ellipsis,
-              //                   ),
-              //                 ),
-              //               ),
-              //             ],
-              //           ),
-              //         ),
-              //       );
-              //     }),
+              body: ListView.builder(
+                  itemCount: state.loaded.results!.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 16, 10, 0),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            color: Color.fromARGB(137, 240, 182, 182),
+                            // border: Border.all(),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            )),
+                        child: Wrap(
+                          direction: Axis.horizontal,
+                          children: [
+                            SizedBox(
+                              height: 150,
+                              width: MediaQuery.of(context).size.width / 2.2,
+                              child: Image.network(state
+                                  .loaded.results![index].multimedia![0].url
+                                  .toString()),
+                            ),
+                            SizedBox(
+                              width: 194,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                                child: Text(
+                                  state.loaded.results![index].title.toString(),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
             ),
           );
         }
