@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:snews/hidden_drawer.dart';
 import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
 import 'package:snews/src/feature/presentation/screens/main_screen.dart';
 
@@ -18,9 +19,10 @@ class MainApp extends StatelessWidget {
         BlocProvider(create: (context) => AllNewsBloc()),
       ],
       builder: (context, child) => Builder(builder: (context) {
-        return const MaterialApp(
+        return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: MainScreen(),
+          home: const HiddenDrawer(),
+          theme: ThemeData(primaryColor: Colors.white),
         );
       }),
     );

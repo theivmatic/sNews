@@ -27,33 +27,33 @@ class _MainScreenState extends State<MainScreen> {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(
-              appBar: AppBar(
-                backgroundColor: Colors.white,
-                title: const Text(
-                  'sNews',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontFamily: 'Ancient',
-                  ),
-                ),
-                centerTitle: true,
-                leading: const Icon(
-                  Icons.menu,
-                  color: Colors.black,
-                  size: 25,
-                ),
-                actions: const [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Icon(
-                      Icons.account_circle,
-                      color: Colors.black,
-                      size: 35,
-                    ),
-                  )
-                ],
-              ),
+              // appBar: AppBar(
+              //   backgroundColor: Colors.white,
+              //   title: const Text(
+              //     'sNews',
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontSize: 40,
+              //       fontFamily: 'Ancient',
+              //     ),
+              //   ),
+              //   centerTitle: true,
+              //   leading: const Icon(
+              //     Icons.menu,
+              //     color: Colors.black,
+              //     size: 25,
+              //   ),
+              //   actions: const [
+              //     Padding(
+              //       padding: EdgeInsets.symmetric(horizontal: 15),
+              //       child: Icon(
+              //         Icons.account_circle,
+              //         color: Colors.black,
+              //         size: 35,
+              //       ),
+              //     )
+              //   ],
+              // ),
               body: ListView.builder(
                   itemCount: state.loaded.results!.length,
                   itemBuilder: (context, index) {
