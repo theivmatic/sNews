@@ -13,7 +13,6 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.5
-  google_fonts: ^4.0.5
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -24,3 +23,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Ancient
+      fonts:
+        - asset: assets/fonts/Ancient-Medium.ttf
+
+# assets:
+#   - assets/fonts/
+
+# fonts:
+#   - family: Ancient
+#     fonts: 
+#       - asset: assets/fonts/Ancient-Medium.ttf
+        

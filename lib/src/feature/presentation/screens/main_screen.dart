@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
 
-
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -32,7 +31,11 @@ class _MainScreenState extends State<MainScreen> {
                 backgroundColor: Colors.white,
                 title: const Text(
                   'sNews',
-                  style: TextStyle(color: Colors.black, fontSize: 30),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 40,
+                    fontFamily: 'Ancient',
+                  ),
                 ),
                 centerTitle: true,
                 leading: const Icon(
