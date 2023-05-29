@@ -13,6 +13,11 @@ class HiddenDrawer extends StatefulWidget {
 class _HiddenDrawerState extends State<HiddenDrawer> {
   List<ScreenHiddenDrawer> _pages = [];
 
+  final hiddenDrawerMenuTextStyle = const TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+
   @override
   void initState() {
     super.initState();
@@ -21,16 +26,18 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'News',
-          baseStyle: const TextStyle(),
-          selectedStyle: const TextStyle(),
+          baseStyle: hiddenDrawerMenuTextStyle,
+          selectedStyle: hiddenDrawerMenuTextStyle,
+          colorLineSelected: Colors.black,
         ),
         const MainScreen(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
           name: 'Settings',
-          baseStyle: const TextStyle(),
-          selectedStyle: const TextStyle(),
+          baseStyle: hiddenDrawerMenuTextStyle,
+          selectedStyle: hiddenDrawerMenuTextStyle,
+          colorLineSelected: Colors.black,
         ),
         const SettingsScreen(),
       ),
@@ -42,7 +49,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     return HiddenDrawerMenu(
       slidePercent: 30,
       isTitleCentered: true,
-      backgroundColorMenu: Colors.white,
+      backgroundColorMenu: const Color.fromARGB(255, 172, 172, 172),
       backgroundColorAppBar: Colors.white,
       screens: _pages,
       initPositionSelected: 0,

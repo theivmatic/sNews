@@ -17,13 +17,15 @@ class MainApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AllNewsBloc()),
       ],
-      builder: (context, child) => Builder(builder: (context) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: const HiddenDrawer(),
-          theme: ThemeData(primaryColor: Colors.white),
-        );
-      }),
+      builder: (context, child) => Builder(
+        builder: (context) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: const HiddenDrawer(),
+            theme: ThemeData(primaryColor: Colors.white),
+          );
+        },
+      ),
     );
   }
 }
