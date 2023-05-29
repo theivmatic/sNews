@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
                                     state.loaded.results![index].multimedia![0]
                                         .url
                                         .toString(),
-                                    fit: BoxFit.fill,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 ),
                               ),
