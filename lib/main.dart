@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:snews/hidden_drawer.dart';
 import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
-import 'package:snews/src/feature/presentation/screens/main_screen.dart';
 
 void main() {
   runApp(const MainApp());
