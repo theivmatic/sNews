@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
             debugShowCheckedModeBanner: false,
             home: Scaffold(
               body: ListView.separated(
-                padding: const EdgeInsets.all(0.0),
+                  padding: const EdgeInsets.all(0.0),
                   separatorBuilder: (BuildContext context, int index) =>
                       const Divider(),
                   physics: const BouncingScrollPhysics(

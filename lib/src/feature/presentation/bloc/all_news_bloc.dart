@@ -8,7 +8,7 @@ class AllNewsBloc extends Bloc<AllNewsEvent, AllNewsState> {
   AllNewsBloc() : super(AllNewsInitialState()) {
     on<FetchAllNewsEvent>((event, emit) async {
       try {
-        final loaded = await ApiDataImpl().fetchAllNews();
+        final loaded = await ApiDataImpl().fetchAllNews(section: 'business');
         emit(AllNewsLoadedState(loaded: loaded));
       } catch (e) {
         emit(AllNewsErrorState(errorMsg: e.toString()));
