@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:snews/generated/l10n.dart';
 import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
 import 'package:snews/src/feature/presentation/widgets/hidden_drawer.dart';
 
@@ -20,7 +22,14 @@ class MainApp extends StatelessWidget {
       builder: (context, child) => Builder(
         builder: (context) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            debugShowCheckedModeBanner: true,
             home: const HiddenDrawer(),
             theme: ThemeData(primaryColor: Colors.white),
           );
