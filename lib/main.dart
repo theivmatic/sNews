@@ -5,6 +5,7 @@ import 'package:snews/src/feature/presentation/bloc/all_news_bloc.dart';
 import 'package:snews/src/feature/presentation/widgets/hidden_drawer.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 
