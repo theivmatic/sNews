@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:snews/src/feature/presentation/screens/main_screen.dart';
 import 'package:snews/src/feature/presentation/screens/settings_screen.dart';
+import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
 class HiddenDrawer extends StatefulWidget {
   const HiddenDrawer({super.key});
@@ -66,15 +67,9 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
           fontFamily: 'Ancient',
         ),
       ),
-      actionsAppBar: const [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Icon(
-            Icons.account_circle,
-            color: Colors.black,
-            size: 35,
-          ),
-        )
+      actionsAppBar: 
+      const [
+        PopUpWidget(),
       ],
     );
   }
