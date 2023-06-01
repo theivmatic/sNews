@@ -45,7 +45,7 @@ class _PopUpWidgetState extends State<PopUpWidget> {
                 padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
                 child: Icon(Icons.logout, color: Colors.black),
               ),
-              Text('Exit'),
+              Text('Log Out'),
             ],
           ),
         ),
