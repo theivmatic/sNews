@@ -40,9 +40,6 @@ class _MainScreenState extends State<MainScreen> {
                       child: Container(
                         decoration: const BoxDecoration(
                           color: Colors.white,
-                          // border: Border(
-                          //   bottom: BorderSide(style: BorderStyle.solid),
-                          // ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
