@@ -13,7 +13,7 @@ class AllNewsLoadedState extends AllNewsState {
 class AllNewsLoadingState extends AllNewsState {}
 
 class AllNewsErrorState extends AllNewsState {
-  String? errorMsg;
+  String? errorMessage;
   int? errorCode;
-  AllNewsErrorState({this.errorCode, this.errorMsg});
+  AllNewsErrorState({this.errorCode, this.errorMessage});
 }

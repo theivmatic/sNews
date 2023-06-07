@@ -107,7 +107,7 @@ class _MainScreenState extends State<MainScreen> {
         if (state is AllNewsErrorState) {
           return Scaffold(
             body: Center(
-              child: Text(state.errorMsg ?? 'Some Error'),
+              child: Text(state.errorMessage ?? 'Some Error'),
             ),
           );
         } else {
