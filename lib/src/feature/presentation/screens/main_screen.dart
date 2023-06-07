@@ -90,14 +90,6 @@ class _MainScreenState extends State<MainScreen> {
                                         maxLines: 4,
                                       ),
                                     ),
-
-                                    // TODO: Хотел под текстом с описанием новости указать дату публикации,
-                                    //но почему-то выдает null
-
-                                    // Text(
-                                    //   state.loaded.results![index].publishedDate
-                                    //       .toString(),
-                                    // ),
                                   ],
                                 ),
                               ),
