@@ -1,4 +1,4 @@
-part of 'all_news_bloc.dart';
+import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
 
 abstract class AllNewsState {}
 
