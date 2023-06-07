@@ -1,5 +1,5 @@
 import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
 
 abstract class IDataApi {
-  Future<AllNewsEntity> fetchBusinessNews({required String section});
+  Future<AllNewsEntity> fetchNews({required String section});
 }

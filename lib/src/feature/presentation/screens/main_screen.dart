@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snews/src/feature/presentation/bloc/all_news/all_news_bloc.dart';
-import 'package:snews/src/feature/presentation/bloc/all_news/all_news_event.dart';
-import 'package:snews/src/feature/presentation/bloc/all_news/all_news_state.dart';
+import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart';
+import 'package:snews/src/feature/presentation/bloc/business/business_event.dart';
+import 'package:snews/src/feature/presentation/bloc/business/business_state.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/data/data_api_impl.dart';
-import 'package:snews/src/feature/presentation/bloc/all_news/all_news_event.dart';
-import 'package:snews/src/feature/presentation/bloc/all_news/all_news_state.dart';
+import 'package:snews/src/feature/presentation/bloc/business/business_event.dart';
+import 'package:snews/src/feature/presentation/bloc/business/business_state.dart';
 
 class AllNewsBloc extends Bloc<AllNewsEvent, AllNewsState> {
   AllNewsBloc() : super(AllNewsInitialState()) {

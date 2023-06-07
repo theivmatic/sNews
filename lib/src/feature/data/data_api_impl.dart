@@ -9,7 +9,7 @@ class ApiDataImpl implements IDataApi {
   ApiDataImpl({http.Client? client}) : _client = client ?? http.Client();
 
   @override
-  Future<AllNewsEntity> fetchBusinessNews({required String section}) async {
+  Future<AllNewsEntity> fetchNews({required String section}) async {
     final response = await _client!.get(
       Uri.parse(
           'https://api.nytimes.com/svc/topstories/v2/$section.json?api-key=7G6FwHXsXDGLikbSgrCwcOHABUWIeTrc'),
