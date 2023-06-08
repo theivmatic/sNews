@@ -5,13 +5,19 @@ import 'package:snews/src/feature/presentation/bloc/business/business_state.dart
 
 class BusinessNewsBloc extends Bloc<BusinessNewsEvent, BusinessNewsState> {
   BusinessNewsBloc() : super(BusinessNewsInitialState()) {
-    on<FetchBusinessNewsEvent>((event, emit) async {
-      try {
-        final loaded = await ApiDataImpl().fetchNews(section: 'business');
-        emit(BusinessNewsLoadedState(loaded: loaded));
-      } catch (e) {
-        emit(BusinessNewsErrorState(errorMessage: e.toString()));
-      }
-    });
+    on<FetchBusinessNewsEvent>(
+      (event, emit) async {
+        try {
+          final loaded = await ApiDataImpl().fetchNews(section: 'business');
+          emit(BusinessNewsLoadedState(loaded: loaded));
+        } catch (e) {
+          emit(
+            BusinessNewsErrorState(
+              errorMessage: e.toString(),
+            ),
+          );
+        }
+      },
+    );
   }
 }

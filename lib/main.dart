@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
       builder: (context, child) => Builder(
         builder: (context) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
+            // debugShowCheckedModeBanner: false,
             home: const HiddenDrawer(),
             theme: ThemeData(primaryColor: Colors.white),
           );
