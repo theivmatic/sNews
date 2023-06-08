@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/observer.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_bloc.dart';
+import 'package:snews/src/feature/presentation/bloc/us/us_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_bloc.dart';
 import 'package:snews/src/feature/presentation/widgets/hidden_drawer.dart';
 
@@ -22,6 +23,7 @@ class MainApp extends StatelessWidget {
         BlocProvider(create: (context) => BusinessNewsBloc()),
         BlocProvider(create: (context) => WorldNewsBloc()),
         BlocProvider(create: (context) => PoliticsNewsBloc()),
+        BlocProvider(create: (context) => USNewsBloc()),
       ],
       builder: (context, child) => Builder(
         builder: (context) {
