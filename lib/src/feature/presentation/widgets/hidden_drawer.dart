@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
-import 'package:snews/src/feature/presentation/screens/main_screen.dart';
-import 'package:snews/src/feature/presentation/screens/settings_screen.dart';
+import 'package:snews/src/feature/presentation/screens/news/business.dart';
+import 'package:snews/src/feature/presentation/screens/news/politics.dart';
+import 'package:snews/src/feature/presentation/screens/news/world.dart';
+import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
 class HiddenDrawer extends StatefulWidget {
   const HiddenDrawer({super.key});
@@ -25,22 +27,32 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'News',
+          name: 'World',
           baseStyle: hiddenDrawerMenuTextStyle,
           selectedStyle: hiddenDrawerMenuTextStyle,
           colorLineSelected: Colors.black,
         ),
-        const MainScreen(),
+        const WorldScreen(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Settings',
+          name: 'Business',
           baseStyle: hiddenDrawerMenuTextStyle,
           selectedStyle: hiddenDrawerMenuTextStyle,
           colorLineSelected: Colors.black,
         ),
-        const SettingsScreen(),
+        const BusinessScreen(),
       ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Politics',
+          baseStyle: hiddenDrawerMenuTextStyle,
+          selectedStyle: hiddenDrawerMenuTextStyle,
+          colorLineSelected: Colors.black,
+        ),
+        const PoliticsScreen(),
+      ),
+      
     ];
   }
 
@@ -66,15 +78,9 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
           fontFamily: 'Ancient',
         ),
       ),
-      actionsAppBar: const [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: Icon(
-            Icons.account_circle,
-            color: Colors.black,
-            size: 35,
-          ),
-        )
+      actionsAppBar: 
+      const [
+        PopUpWidget(),
       ],
     );
   }

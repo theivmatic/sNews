@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'all_news.dart';
+part of 'news.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AllNewsEntity _$AllNewsEntityFromJson(Map<String, dynamic> json) =>
-    AllNewsEntity(
+NewsEntity _$AllNewsEntityFromJson(Map<String, dynamic> json) =>
+    NewsEntity(
       status: json['status'] as String?,
       copyright: json['copyright'] as String?,
       section: json['section'] as String?,
