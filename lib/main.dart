@@ -27,6 +27,7 @@ class MainApp extends StatelessWidget {
       ],
       builder: (context, child) => Builder(
         builder: (context) {
+          // TODO: and here it is necessary
           return MaterialApp(
             // debugShowCheckedModeBanner: false,
             home: const HiddenDrawer(),

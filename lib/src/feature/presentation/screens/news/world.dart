@@ -26,6 +26,7 @@ class _WorldScreenState extends State<WorldScreen> {
       bloc: worldNewsBlock,
       builder: (context, state) {
         if (state is WorldNewsLoadedState) {
+          // TODO: u dont have to call MATERIALAPP..... Just Scaffold(Google: WHAT?)
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(

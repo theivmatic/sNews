@@ -27,6 +27,7 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
       bloc: politicsNewsBloc,
       builder: (context, state) {
         if (state is PoliticsNewsLoadedState) {
+          // TODO: u dont have to call MATERIALAPP..... Just Scaffold(Google: WHAT?)
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(

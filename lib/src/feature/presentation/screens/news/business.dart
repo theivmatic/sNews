@@ -27,6 +27,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
       bloc: businessNewsBloc,
       builder: (context, state) {
         if (state is BusinessNewsLoadedState) {
+          // TODO: u dont have to call MATERIALAPP..... Just Scaffold(Google: WHAT?)
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(

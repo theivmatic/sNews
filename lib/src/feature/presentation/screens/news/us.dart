@@ -16,8 +16,7 @@ class _USScreenState extends State<USScreen> {
 
   @override
   void initState() {
-    usNewsBloc = context.read<USNewsBloc>()
-      ..add(FetchUSNewsEvent());
+    usNewsBloc = context.read<USNewsBloc>()..add(FetchUSNewsEvent());
     super.initState();
   }
 
@@ -27,6 +26,7 @@ class _USScreenState extends State<USScreen> {
       bloc: usNewsBloc,
       builder: (context, state) {
         if (state is USNewsLoadedState) {
+          // TODO: u dont have to call MATERIALAPP..... Just Scaffold(Google: WHAT?)
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(
