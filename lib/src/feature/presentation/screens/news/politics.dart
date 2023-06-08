@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_bloc.dart';
-import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_event.dart';
-import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_state.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/politics_bloc.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/politics_event.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/politics_state.dart';
 
 class PoliticsScreen extends StatefulWidget {
   const PoliticsScreen({super.key});

@@ -1,3 +1,3 @@
-# snews
+# sNews
 
-A new Flutter project.
+sNews shows you news all around the Earth

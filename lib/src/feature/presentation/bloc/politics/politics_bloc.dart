@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/data/data_api_impl.dart';
-import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_event.dart';
-import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_state.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/politics_event.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/politics_state.dart';
 
 class PoliticsNewsBloc extends Bloc<PoliticsNewsEvent, PoliticsNewsState> {
   PoliticsNewsBloc() : super(PoliticsNewsInitialState()) {
