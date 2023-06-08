@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:snews/src/feature/presentation/screens/news/business.dart';
+import 'package:snews/src/feature/presentation/screens/news/politics.dart';
 import 'package:snews/src/feature/presentation/screens/news/world.dart';
 import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
@@ -42,15 +43,15 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
         ),
         const BusinessScreen(),
       ),
-      // ScreenHiddenDrawer(
-      //   ItemHiddenMenu(
-      //     name: 'Politics',
-      //     baseStyle: hiddenDrawerMenuTextStyle,
-      //     selectedStyle: hiddenDrawerMenuTextStyle,
-      //     colorLineSelected: Colors.black,
-      //   ),
-      //   const PoliticsScreen(),
-      // ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Politics',
+          baseStyle: hiddenDrawerMenuTextStyle,
+          selectedStyle: hiddenDrawerMenuTextStyle,
+          colorLineSelected: Colors.black,
+        ),
+        const PoliticsScreen(),
+      ),
       
     ];
   }
