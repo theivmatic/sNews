@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
-import 'package:snews/src/feature/presentation/screens/business_screen.dart';
-import 'package:snews/src/feature/presentation/screens/world_screen.dart';
+import 'package:snews/src/feature/presentation/screens/news/business.dart';
+import 'package:snews/src/feature/presentation/screens/news/world.dart';
 import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
 class HiddenDrawer extends StatefulWidget {
@@ -26,15 +26,6 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     _pages = [
       ScreenHiddenDrawer(
         ItemHiddenMenu(
-          name: 'Business',
-          baseStyle: hiddenDrawerMenuTextStyle,
-          selectedStyle: hiddenDrawerMenuTextStyle,
-          colorLineSelected: Colors.black,
-        ),
-        const BusinessScreen(),
-      ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
           name: 'World',
           baseStyle: hiddenDrawerMenuTextStyle,
           selectedStyle: hiddenDrawerMenuTextStyle,
@@ -42,6 +33,25 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
         ),
         const WorldScreen(),
       ),
+      ScreenHiddenDrawer(
+        ItemHiddenMenu(
+          name: 'Business',
+          baseStyle: hiddenDrawerMenuTextStyle,
+          selectedStyle: hiddenDrawerMenuTextStyle,
+          colorLineSelected: Colors.black,
+        ),
+        const BusinessScreen(),
+      ),
+      // ScreenHiddenDrawer(
+      //   ItemHiddenMenu(
+      //     name: 'Politics',
+      //     baseStyle: hiddenDrawerMenuTextStyle,
+      //     selectedStyle: hiddenDrawerMenuTextStyle,
+      //     colorLineSelected: Colors.black,
+      //   ),
+      //   const PoliticsScreen(),
+      // ),
+      
     ];
   }
 

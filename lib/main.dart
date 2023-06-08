@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/observer.dart';
+import 'package:snews/src/feature/presentation/bloc/politics/bloc/politics_bloc.dart';
+import 'package:snews/src/feature/presentation/bloc/world/world_bloc.dart';
 import 'package:snews/src/feature/presentation/widgets/hidden_drawer.dart';
 
 void main() {
@@ -18,6 +20,8 @@ class MainApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         BlocProvider(create: (context) => BusinessNewsBloc()),
+        BlocProvider(create: (context) => WorldNewsBloc()),
+        BlocProvider(create: (context) => PoliticsNewsBloc()),
       ],
       builder: (context, child) => Builder(
         builder: (context) {

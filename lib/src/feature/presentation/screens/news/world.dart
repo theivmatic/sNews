@@ -27,6 +27,7 @@ class _WorldScreenState extends State<WorldScreen> {
       builder: (context, state) {
         if (state is WorldNewsLoadedState) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Scaffold(
               body: ListView.separated(
                 padding: const EdgeInsets.all(0.0),
