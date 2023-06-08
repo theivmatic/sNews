@@ -1,19 +1,19 @@
-import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
+import 'package:snews/src/feature/domain/models/news/news.dart';
 
-abstract class AllNewsState {}
+abstract class BusinessNewsState {}
 
-class AllNewsInitialState extends AllNewsState {}
+class BusinessNewsInitialState extends BusinessNewsState {}
 
-class AllNewsLoadedState extends AllNewsState {
-  final AllNewsEntity loaded;
+class BusinessNewsLoadedState extends BusinessNewsState {
+  final NewsEntity loaded;
 
-  AllNewsLoadedState({required this.loaded});
+  BusinessNewsLoadedState({required this.loaded});
 }
 
-class AllNewsLoadingState extends AllNewsState {}
+class BusinessNewsLoadingState extends BusinessNewsState {}
 
-class AllNewsErrorState extends AllNewsState {
+class BusinessNewsErrorState extends BusinessNewsState {
   String? errorMessage;
   int? errorCode;
-  AllNewsErrorState({this.errorCode, this.errorMessage});
+  BusinessNewsErrorState({this.errorCode, this.errorMessage});
 }

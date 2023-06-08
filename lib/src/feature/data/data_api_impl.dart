@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:snews/src/feature/domain/interfaces/data_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
+import 'package:snews/src/feature/domain/models/news/news.dart';
 
 class ApiDataImpl implements IDataApi {
   final http.Client? _client;
@@ -9,7 +9,7 @@ class ApiDataImpl implements IDataApi {
   ApiDataImpl({http.Client? client}) : _client = client ?? http.Client();
 
   @override
-  Future<AllNewsEntity> fetchNews({required String section}) async {
+  Future<NewsEntity> fetchNews({required String section}) async {
     final response = await _client!.get(
       Uri.parse(
           'https://api.nytimes.com/svc/topstories/v2/$section.json?api-key=7G6FwHXsXDGLikbSgrCwcOHABUWIeTrc'),
@@ -18,7 +18,7 @@ class ApiDataImpl implements IDataApi {
       },
     );
     if (response.statusCode == 200) {
-      return AllNewsEntity.fromJson(
+      return NewsEntity.fromJson(
           json.decode(utf8.decode(response.bodyBytes)));
     } else {
       throw Exception('Status Code: ${response.statusCode}');

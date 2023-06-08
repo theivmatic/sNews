@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-part 'all_news.g.dart';
+part 'news.g.dart';
 
 @JsonSerializable()
-class AllNewsEntity {
+class NewsEntity {
   String? status;
   String? copyright;
   String? section;
@@ -10,7 +10,7 @@ class AllNewsEntity {
   int? numResults;
   List<Result>? results;
 
-  AllNewsEntity({
+  NewsEntity({
     this.status,
     this.copyright,
     this.section,
@@ -19,7 +19,7 @@ class AllNewsEntity {
     this.results,
   });
 
-  factory AllNewsEntity.fromJson(Map<String, dynamic> json) =>
+  factory NewsEntity.fromJson(Map<String, dynamic> json) =>
       _$AllNewsEntityFromJson(json);
 }
 

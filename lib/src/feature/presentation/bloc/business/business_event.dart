@@ -1,3 +1,3 @@
-abstract class AllNewsEvent {}
+abstract class BusinessNewsEvent {}
 
-class FetchAllNewsEvent extends AllNewsEvent {}
+class FetchBusinessNewsEvent extends BusinessNewsEvent {}

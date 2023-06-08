@@ -4,28 +4,28 @@ import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart'
 import 'package:snews/src/feature/presentation/bloc/business/business_event.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_state.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class BusinessScreen extends StatefulWidget {
+  const BusinessScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<BusinessScreen> createState() => _BusinessScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  AllNewsBloc? allNewsBloc;
+class _BusinessScreenState extends State<BusinessScreen> {
+  BusinessNewsBloc? allNewsBloc;
 
   @override
   void initState() {
-    allNewsBloc = context.read<AllNewsBloc>()..add(FetchAllNewsEvent());
+    allNewsBloc = context.read<BusinessNewsBloc>()..add(FetchBusinessNewsEvent());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AllNewsBloc, AllNewsState>(
+    return BlocBuilder<BusinessNewsBloc, BusinessNewsState>(
       bloc: allNewsBloc,
       builder: (context, state) {
-        if (state is AllNewsLoadedState) {
+        if (state is BusinessNewsLoadedState) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: Scaffold(
@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           );
         }
-        if (state is AllNewsErrorState) {
+        if (state is BusinessNewsErrorState) {
           return Scaffold(
             body: Center(
               child: Text(state.errorMessage ?? 'Some Error'),

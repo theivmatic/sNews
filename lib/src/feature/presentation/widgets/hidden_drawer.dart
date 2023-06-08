@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
-import 'package:snews/src/feature/presentation/screens/main_screen.dart';
+import 'package:snews/src/feature/presentation/screens/business_screen.dart';
 import 'package:snews/src/feature/presentation/screens/world_screen.dart';
 import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
@@ -31,7 +31,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
           selectedStyle: hiddenDrawerMenuTextStyle,
           colorLineSelected: Colors.black,
         ),
-        const MainScreen(),
+        const BusinessScreen(),
       ),
       ScreenHiddenDrawer(
         ItemHiddenMenu(

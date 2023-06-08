@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        BlocProvider(create: (context) => AllNewsBloc()),
+        BlocProvider(create: (context) => BusinessNewsBloc()),
       ],
       builder: (context, child) => Builder(
         builder: (context) {

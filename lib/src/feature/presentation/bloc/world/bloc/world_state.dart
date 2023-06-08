@@ -1,11 +1,11 @@
-import 'package:snews/src/feature/domain/models/all_news/all_news.dart';
+import 'package:snews/src/feature/domain/models/news/news.dart';
 
 abstract class WorldState {}
 
 class WorldInitialState extends WorldState {}
 
 class WorldLoadedState extends WorldState {
-  final AllNewsEntity loaded;
+  final NewsEntity loaded;
 
   WorldLoadedState({required this.loaded});
 }
