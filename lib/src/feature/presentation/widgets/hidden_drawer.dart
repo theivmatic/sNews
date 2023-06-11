@@ -52,15 +52,6 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
         ),
         const PoliticsScreen(),
       ),
-      ScreenHiddenDrawer(
-        ItemHiddenMenu(
-          name: 'U.S.',
-          baseStyle: hiddenDrawerMenuTextStyle,
-          selectedStyle: hiddenDrawerMenuTextStyle,
-          colorLineSelected: Colors.black,
-        ),
-        const PoliticsScreen(),
-      ),
     ];
   }
 
