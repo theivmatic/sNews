@@ -65,7 +65,7 @@ class _WorldScreenState extends State<WorldScreen> {
                               children: [
                                 Padding(
                                   padding:
-                                      const EdgeInsets.fromLTRB(10, 0, 10, 5),
+                                      const EdgeInsets.fromLTRB(10, 6, 10, 5),
                                   child: Text(
                                     state.loaded.results![index].title
                                         .toString(),
