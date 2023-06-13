@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_event.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_state.dart';
+import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
 class PoliticsScreen extends StatefulWidget {
   const PoliticsScreen({super.key});
@@ -109,7 +110,10 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
           );
         } else {
           return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: ShimmerWidget(
+              width: double.infinity,
+              height: 100,
+            ),
           );
         }
       },

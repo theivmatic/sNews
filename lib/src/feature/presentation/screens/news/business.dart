@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_event.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_state.dart';
+import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
 class BusinessScreen extends StatefulWidget {
   const BusinessScreen({super.key});
@@ -109,7 +110,10 @@ class _BusinessScreenState extends State<BusinessScreen> {
           );
         } else {
           return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: ShimmerWidget(
+              width: double.infinity,
+              height: 100,
+            ),
           );
         }
       },

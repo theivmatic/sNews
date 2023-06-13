@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_event.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_state.dart';
+import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
 class WorldScreen extends StatefulWidget {
   const WorldScreen({super.key});
@@ -109,8 +110,9 @@ class _WorldScreenState extends State<WorldScreen> {
           );
         } else {
           return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
+            body: ShimmerWidget(
+              width: double.infinity,
+              height: 100,
             ),
           );
         }

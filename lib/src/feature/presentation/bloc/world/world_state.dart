@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:snews/src/feature/domain/models/news/news.dart';
 
 abstract class WorldNewsState {}
