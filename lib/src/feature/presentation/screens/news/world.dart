@@ -109,10 +109,17 @@ class _WorldScreenState extends State<WorldScreen> {
             ),
           );
         } else {
-          return const Scaffold(
-            body: ShimmerWidget(
-              width: double.infinity,
-              height: 100,
+          return Scaffold(
+            body: ListView.separated(
+              padding: const EdgeInsets.all(0.0),
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
+              physics: const BouncingScrollPhysics(
+                  decelerationRate: ScrollDecelerationRate.normal),
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return const ShimmerWidget(height: 150);
+              },
             ),
           );
         }
