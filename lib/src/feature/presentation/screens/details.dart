@@ -62,6 +62,22 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
+            child: Text('Last update: ${loaded.updatedDate.toString()}',
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
+            child: Text('Read full version here: ${loaded.url.toString()}',
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ),
         ],
       ),
     );
