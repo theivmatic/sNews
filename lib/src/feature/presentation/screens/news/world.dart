@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_event.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_state.dart';
+import 'package:snews/src/feature/presentation/widgets/news_card.dart';
 import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
 class WorldScreen extends StatefulWidget {
@@ -37,66 +38,13 @@ class _WorldScreenState extends State<WorldScreen> {
               ),
               itemCount: state.loaded.results!.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-                      child: Wrap(
-                        direction: Axis.horizontal,
-                        children: [
-                          SizedBox(
-                            height: 150,
-                            width: MediaQuery.of(context).size.width / 2.2,
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
-                              child: Image.network(
-                                state.loaded.results![index].multimedia![0].url
-                                    .toString(),
-                                fit: BoxFit.fitWidth,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 194,
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 6, 10, 5),
-                                  child: Text(
-                                    state.loaded.results![index].title
-                                        .toString(),
-                                    overflow: TextOverflow.clip,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromRGBO(18, 18, 18, 1),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 5, 10, 10),
-                                  child: Text(
-                                    state.loaded.results![index].abstract
-                                        .toString(),
-                                    overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      color: Color.fromRGBO(90, 90, 90, 1),
-                                    ),
-                                    maxLines: 4,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                return NewsCardWidget(
+                  image: Image.network(
+                    state.loaded.results![index].multimedia![0].url.toString(),
+                    fit: BoxFit.fitWidth,
                   ),
+                  title: state.loaded.results![index].title.toString(),
+                  subtitle: state.loaded.results![index].abstract.toString(),
                 );
               },
             ),
