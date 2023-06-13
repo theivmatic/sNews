@@ -32,7 +32,10 @@ class DetailsScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: Column(
+      body: ListView(
+        physics: const BouncingScrollPhysics(
+          decelerationRate: ScrollDecelerationRate.normal,
+        ),
         children: [
           SizedBox(
             child: Image.network(
