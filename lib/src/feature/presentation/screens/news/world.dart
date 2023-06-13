@@ -39,7 +39,7 @@ class _WorldScreenState extends State<WorldScreen> {
               itemCount: state.loaded.results!.length,
               itemBuilder: (context, index) {
                 return NewsCardWidget(
-                  loaded: state.loaded,
+                  loaded: state.loaded.results![index],
                 );
               },
             ),

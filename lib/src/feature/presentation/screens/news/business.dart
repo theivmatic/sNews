@@ -38,7 +38,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
                   decelerationRate: ScrollDecelerationRate.normal),
               itemCount: state.loaded.results!.length,
               itemBuilder: (context, index) {
-                return NewsCardWidget(loaded: state.loaded);
+                return NewsCardWidget(loaded: state.loaded.results![index]);
               },
             ),
           );
