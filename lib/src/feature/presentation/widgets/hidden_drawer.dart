@@ -60,7 +60,7 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
     return HiddenDrawerMenu(
       slidePercent: 30,
       isTitleCentered: true,
-      backgroundColorMenu: const Color.fromARGB(255, 172, 172, 172),
+      backgroundColorMenu: const Color.fromARGB(66, 160, 160, 160),
       backgroundColorAppBar: Colors.white,
       screens: _pages,
       initPositionSelected: 0,

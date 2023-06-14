@@ -25,7 +25,8 @@ class NewsCardWidget extends StatelessWidget {
         },
         child: Container(
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Color.fromARGB(66, 160, 160, 160),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
