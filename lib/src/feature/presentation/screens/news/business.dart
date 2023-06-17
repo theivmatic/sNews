@@ -23,6 +23,10 @@ class _BusinessScreenState extends State<BusinessScreen> {
     super.initState();
   }
 
+  showAlert() {
+    return ErrorWidget(ErrorWidget.new);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BusinessNewsBloc, BusinessNewsState>(
@@ -44,11 +48,7 @@ class _BusinessScreenState extends State<BusinessScreen> {
           );
         }
         if (state is BusinessNewsErrorState) {
-          return Scaffold(
-            body: Center(
-              child: Text(state.errorMessage ?? 'Some Error'),
-            ),
-          );
+          return showAlert();
         } else {
           return Scaffold(
             body: ListView.separated(
