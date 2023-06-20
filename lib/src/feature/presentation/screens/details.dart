@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snews/src/feature/domain/models/news/news.dart';
+import 'package:snews/src/feature/presentation/widgets/popup_menu.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Result loaded;
@@ -22,14 +23,20 @@ class DetailsScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Text(
-          'sNews',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 40,
-            fontFamily: 'Ancient',
+        title: const Padding(
+          padding: EdgeInsets.only(left: 75),
+          child: Text(
+            'sNews',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 40,
+              fontFamily: 'Ancient',
+            ),
           ),
         ),
+        actions: const [
+          PopUpWidget(),
+        ],
         backgroundColor: Colors.white,
       ),
       body: ListView(
@@ -75,7 +82,11 @@ class DetailsScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
             child: TextButton(
               style: const ButtonStyle(
-                  foregroundColor: MaterialStatePropertyAll(Colors.black)),
+                backgroundColor: MaterialStatePropertyAll(
+                  Color.fromARGB(66, 160, 160, 160),
+                ),
+                foregroundColor: MaterialStatePropertyAll(Colors.black),
+              ),
               onPressed: () {},
               child: const Text(
                 'Click here to read full version',

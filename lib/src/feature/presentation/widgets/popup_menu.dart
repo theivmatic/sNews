@@ -16,7 +16,6 @@ class _PopUpWidgetState extends State<PopUpWidget> {
         child: Icon(Icons.more_vert, color: Colors.black),
       ),
       itemBuilder: (context) => [
-        // TODO: Тебе линтер не подсказывает конст?
         PopupMenuItem(
           child: Row(
             children: const [
