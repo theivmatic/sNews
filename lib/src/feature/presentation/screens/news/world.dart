@@ -38,7 +38,6 @@ class _WorldScreenState extends State<WorldScreen> {
               ),
               itemCount: state.loaded.results!.length,
               itemBuilder: (context, index) {
-                // TODO: везде так сделать.
                 if (index == 0) {
                   return Padding(
                     padding: const EdgeInsets.only(top: 12.0),

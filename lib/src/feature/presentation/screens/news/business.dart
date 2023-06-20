@@ -43,6 +43,14 @@ class _BusinessScreenState extends State<BusinessScreen> {
                   decelerationRate: ScrollDecelerationRate.normal),
               itemCount: state.loaded.results!.length,
               itemBuilder: (context, index) {
+                if (index == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 12.0),
+                    child: NewsCardWidget(
+                      loaded: state.loaded.results![index],
+                    ),
+                  );
+                }
                 return NewsCardWidget(loaded: state.loaded.results![index]);
               },
             ),
