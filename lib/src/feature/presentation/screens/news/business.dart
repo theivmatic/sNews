@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_event.dart';
 import 'package:snews/src/feature/presentation/bloc/business/business_state.dart';
-import 'package:snews/src/feature/presentation/widgets/error.dart';
+import 'package:snews/src/feature/presentation/widgets/error_alert.dart';
 import 'package:snews/src/feature/presentation/widgets/news_card.dart';
 import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 

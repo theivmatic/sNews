@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_event.dart';
 import 'package:snews/src/feature/presentation/bloc/world/world_state.dart';
+import 'package:snews/src/feature/presentation/widgets/error_alert.dart';
 import 'package:snews/src/feature/presentation/widgets/news_card.dart';
 import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
@@ -20,6 +21,10 @@ class _WorldScreenState extends State<WorldScreen> {
   void initState() {
     worldNewsBlock = context.read<WorldNewsBloc>()..add(FetchWorldNewsEvent());
     super.initState();
+  }
+
+  Widget showAlert() {
+    return const ErrorAlertWidget();
   }
 
   @override
@@ -54,11 +59,7 @@ class _WorldScreenState extends State<WorldScreen> {
           );
         }
         if (state is WorldNewsErrorState) {
-          return Scaffold(
-            body: Center(
-              child: Text(state.errorMessage ?? 'Some Error'),
-            ),
-          );
+          return showAlert();
         } else {
           return Scaffold(
             body: ListView.separated(

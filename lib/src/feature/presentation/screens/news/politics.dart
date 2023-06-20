@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_bloc.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_event.dart';
 import 'package:snews/src/feature/presentation/bloc/politics/politics_state.dart';
+import 'package:snews/src/feature/presentation/widgets/error_alert.dart';
 import 'package:snews/src/feature/presentation/widgets/news_card.dart';
 import 'package:snews/src/feature/presentation/widgets/shimmer.dart';
 
@@ -21,6 +22,10 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
     politicsNewsBloc = context.read<PoliticsNewsBloc>()
       ..add(FetchPoliticsNewsEvent());
     super.initState();
+  }
+
+  Widget showAlert() {
+    return const ErrorAlertWidget();
   }
 
   @override
@@ -52,11 +57,7 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
           );
         }
         if (state is PoliticsNewsErrorState) {
-          return Scaffold(
-            body: Center(
-              child: Text(state.errorMessage ?? 'Some Error'),
-            ),
-          );
+          return showAlert();
         } else {
           return Scaffold(
             body: ListView.separated(
