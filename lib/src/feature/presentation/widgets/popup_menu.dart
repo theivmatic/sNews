@@ -15,10 +15,10 @@ class _PopUpWidgetState extends State<PopUpWidget> {
         padding: EdgeInsets.all(8.0),
         child: Icon(Icons.more_vert, color: Colors.black),
       ),
-      itemBuilder: (context) => [
+      itemBuilder: (context) => const [
         PopupMenuItem(
           child: Row(
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
                 child: Icon(Icons.portrait, color: Colors.black),
@@ -29,7 +29,7 @@ class _PopUpWidgetState extends State<PopUpWidget> {
         ),
         PopupMenuItem(
           child: Row(
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
                 child: Icon(Icons.settings, color: Colors.black),
@@ -40,7 +40,7 @@ class _PopUpWidgetState extends State<PopUpWidget> {
         ),
         PopupMenuItem(
           child: Row(
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
                 child: Icon(Icons.logout, color: Colors.black),
