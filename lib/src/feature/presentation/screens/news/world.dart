@@ -27,6 +27,8 @@ class _WorldScreenState extends State<WorldScreen> {
     return const ErrorAlertWidget();
   }
 
+  Future<void> _refresh() async {}
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WorldNewsBloc, WorldNewsState>(
@@ -34,27 +36,32 @@ class _WorldScreenState extends State<WorldScreen> {
       builder: (context, state) {
         if (state is WorldNewsLoadedState) {
           return Scaffold(
-            body: ListView.separated(
-              padding: const EdgeInsets.all(0.0),
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
-              physics: const BouncingScrollPhysics(
-                decelerationRate: ScrollDecelerationRate.normal,
-              ),
-              itemCount: state.loaded.results!.length,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 12.0),
-                    child: NewsCardWidget(
-                      loaded: state.loaded.results![index],
-                    ),
+            body: RefreshIndicator(
+              onRefresh: _refresh,
+              backgroundColor: const Color.fromARGB(66, 160, 160, 160),
+              color: Colors.black,
+              child: ListView.separated(
+                padding: const EdgeInsets.all(0.0),
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(),
+                physics: const BouncingScrollPhysics(
+                  decelerationRate: ScrollDecelerationRate.normal,
+                ),
+                itemCount: state.loaded.results!.length,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      child: NewsCardWidget(
+                        loaded: state.loaded.results![index],
+                      ),
+                    );
+                  }
+                  return NewsCardWidget(
+                    loaded: state.loaded.results![index],
                   );
-                }
-                return NewsCardWidget(
-                  loaded: state.loaded.results![index],
-                );
-              },
+                },
+              ),
             ),
           );
         }
