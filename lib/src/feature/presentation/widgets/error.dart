@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 
-class ErrorWidget extends StatelessWidget {
-  const ErrorWidget({super.key});
+class ErrorAlertWidget extends StatelessWidget {
+  const ErrorAlertWidget({super.key});
 
   // showAlert() {
   //   return const ErrorWidget();
   // }
-    
+
   @override
   Widget build(BuildContext context) {
     return const CupertinoAlertDialog(
