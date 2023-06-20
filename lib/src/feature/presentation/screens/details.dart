@@ -71,12 +71,14 @@ class DetailsScreen extends StatelessWidget {
               ),
             ),
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.fromLTRB(10, 0, 10, 20),
             child: TextButton(
+              style: const ButtonStyle(
+                  foregroundColor: MaterialStatePropertyAll(Colors.black)),
               onPressed: () {},
               child: const Text(
-                'Click to read full version',
+                'Click here to read full version',
                 style: TextStyle(
                   fontSize: 20,
                 ),
