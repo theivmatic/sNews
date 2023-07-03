@@ -32,7 +32,9 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
     );
   }
 
-  Future<void> _refresh() async {}
+  Future<void> _refresh() async {
+    politicsNewsBloc!.add(FetchPoliticsNewsEvent());
+  }
 
   @override
   Widget build(BuildContext context) {

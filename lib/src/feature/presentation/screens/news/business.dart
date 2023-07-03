@@ -32,7 +32,9 @@ class _BusinessScreenState extends State<BusinessScreen> {
     );
   }
 
-  Future<void> _refresh() async {}
+  Future<void> _refresh() async {
+    businessNewsBloc!.add(FetchBusinessNewsEvent());
+  }
 
   @override
   Widget build(BuildContext context) {

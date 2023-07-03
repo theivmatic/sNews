@@ -31,7 +31,9 @@ class _WorldScreenState extends State<WorldScreen> {
     );
   }
 
-  Future<void> _refresh() async {}
+  Future<void> _refresh() async {
+    worldNewsBloc!.add(FetchWorldNewsEvent());
+  }
 
   @override
   Widget build(BuildContext context) {
