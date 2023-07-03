@@ -25,7 +25,11 @@ class _PoliticsScreenState extends State<PoliticsScreen> {
   }
 
   Widget showAlert() {
-    return const ErrorAlertWidget();
+    return  ErrorAlertWidget(
+      reloadScreen: () {
+        politicsNewsBloc!.add(FetchPoliticsNewsEvent());
+      },
+    );
   }
 
   Future<void> _refresh() async {}

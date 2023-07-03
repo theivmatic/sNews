@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 
 class ErrorAlertWidget extends StatelessWidget {
-  const ErrorAlertWidget({super.key});
+  const ErrorAlertWidget({super.key, required this.reloadScreen});
+
+  final void Function() reloadScreen; 
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class ErrorAlertWidget extends StatelessWidget {
         actionsAlignment: MainAxisAlignment.center,
         actions: [
           MaterialButton(
-            onPressed: () {},
+            onPressed: reloadScreen,
             child: const Text('Try again'),
           ),
           MaterialButton(
@@ -28,7 +30,7 @@ class ErrorAlertWidget extends StatelessWidget {
         title: const Text('Something went wrong'),
         actions: [
           CupertinoDialogAction(
-            onPressed: () {},
+            onPressed: reloadScreen,
             child: const Text('Try again'),
           ),
           CupertinoDialogAction(

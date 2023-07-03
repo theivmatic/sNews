@@ -15,16 +15,20 @@ class WorldScreen extends StatefulWidget {
 }
 
 class _WorldScreenState extends State<WorldScreen> {
-  WorldNewsBloc? worldNewsBlock;
+  WorldNewsBloc? worldNewsBloc;
 
   @override
   void initState() {
-    worldNewsBlock = context.read<WorldNewsBloc>()..add(FetchWorldNewsEvent());
+    worldNewsBloc = context.read<WorldNewsBloc>()..add(FetchWorldNewsEvent());
     super.initState();
   }
 
   Widget showAlert() {
-    return const ErrorAlertWidget();
+    return ErrorAlertWidget(
+      reloadScreen: () {
+        worldNewsBloc!.add(FetchWorldNewsEvent());
+      },
+    );
   }
 
   Future<void> _refresh() async {}
@@ -32,7 +36,7 @@ class _WorldScreenState extends State<WorldScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WorldNewsBloc, WorldNewsState>(
-      bloc: worldNewsBlock,
+      bloc: worldNewsBloc,
       builder: (context, state) {
         if (state is WorldNewsLoadedState) {
           return Scaffold(

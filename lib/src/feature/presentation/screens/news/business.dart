@@ -25,7 +25,11 @@ class _BusinessScreenState extends State<BusinessScreen> {
   }
 
   Widget showAlert() {
-    return const ErrorAlertWidget();
+    return ErrorAlertWidget(
+      reloadScreen: () {
+        businessNewsBloc!.add(FetchBusinessNewsEvent());
+      },
+    );
   }
 
   Future<void> _refresh() async {}
