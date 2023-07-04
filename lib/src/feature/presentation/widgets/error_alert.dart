@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:io' show Platform;
+import 'dart:io' show Platform, exit;
+
+import 'package:flutter/services.dart';
 
 class ErrorAlertWidget extends StatelessWidget {
   const ErrorAlertWidget({super.key, required this.reloadScreen});
@@ -20,7 +22,9 @@ class ErrorAlertWidget extends StatelessWidget {
             child: const Text('Try again'),
           ),
           MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              SystemNavigator.pop();
+            },
             child: const Text('Exit'),
           ),
         ],
@@ -34,7 +38,9 @@ class ErrorAlertWidget extends StatelessWidget {
             child: const Text('Try again'),
           ),
           CupertinoDialogAction(
-            onPressed: () {},
+            onPressed: () {
+              exit(0);
+            },
             child: const Text('Exit'),
           ),
         ],
