@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 class ErrorAlertWidget extends StatelessWidget {
   const ErrorAlertWidget({super.key, required this.reloadScreen});
 
-  final void Function() reloadScreen; 
+  final Function() reloadScreen;
 
   @override
   Widget build(BuildContext context) {

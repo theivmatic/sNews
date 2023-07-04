@@ -28,6 +28,20 @@ class _BusinessScreenState extends State<BusinessScreen> {
     return ErrorAlertWidget(
       reloadScreen: () {
         businessNewsBloc!.add(FetchBusinessNewsEvent());
+        return ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Row(
+              children: [
+                Icon(
+                  Icons.signal_wifi_connected_no_internet_4_rounded,
+                  color: Colors.white,
+                ),
+                SizedBox(width: 50),
+                Text('Check your internet connection'),
+              ],
+            ),
+          ),
+        );
       },
     );
   }
